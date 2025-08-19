@@ -1545,6 +1545,14 @@ namespace vin{
                output_list.push_back(89);
                return EXIT_SUCCESS;
              }
+      //----------------------------------------------------------------------
+        // angular momentum - Nargiz Ahmadzada
+        test="sld-angular-momentum";
+        if(word==test){
+            output_list.push_back(90);
+            return EXIT_SUCCESS;
+        }
+        else
       //--------------------------------------------------------------------
         test="gnuplot-array-format";
         if(word==test){

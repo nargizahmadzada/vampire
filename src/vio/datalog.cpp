@@ -314,6 +314,11 @@ namespace vout{
             case 89:
                 vout::material_mean_syslatticetemp(stream, header);
                 break;
+			// angular momentum - Nargiz Ahmadzada
+			case 90:
+				vout::output_sld_angular_momentum(stream, header);
+				break;
+			
 			case 999: //AJN
 				vout::standard_deviation(stream,header);
 				break;

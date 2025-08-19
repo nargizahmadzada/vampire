@@ -542,5 +542,13 @@ namespace vout{
    stream << stats::material_lattice_temp.output_mean_lattice_temp(header);
     }
 
+  // Output Function 90 - angular momentum - Nargiz Ahmadzada
+  
+    void output_sld_angular_momentum(std::ostream& stream, bool header){
+     std::ostringstream res;
+     for (int i = 0; i < sld::angular_momentum.size(); ++i) res << sld::angular_momentum[i]<<"\t";
+     stream <<  res.str() ;
+    }
+  //
 
 }

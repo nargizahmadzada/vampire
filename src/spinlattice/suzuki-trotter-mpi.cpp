@@ -1022,7 +1022,7 @@ void suzuki_trotter_step_parallel(std::vector<double> &x_spin_array,
 
              }      //end second octant loop return 
              
-          
+//add here (reduce part)         
 
 /*for(int atom=0;atom<=atoms::num_atoms-1;atom++){
 

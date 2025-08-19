@@ -534,6 +534,25 @@ namespace sld{
 
                      
                      }}*/
+            // angular momentum - Nargiz Ahmadzada
+            std::array<double, 4> L;         
+            sld::compute_angular_momentum(0,atoms::num_atoms,
+                  atoms::type_array, // type for atom
+                  atoms::x_coord_array,
+                  atoms::y_coord_array,
+                  atoms::z_coord_array,
+                  atoms::x_velo_array,
+                  atoms::y_velo_array,
+                  atoms::z_velo_array,
+                  L);
+            //std::cout << "Lx" << L[0] <<"\tLy" << L[1] <<"\tLz" << L[2] <<"\tL_m" << L[3] << std::endl;
+            //std::array<double, 4> angular_momentum[0]  = L[0];
+            //std::array<double, 4> angular_momentum[1]  = L[1];
+            //std::array<double, 4> angular_momentum[2]  = L[2];
+            //std::array<double, 4> angular_momentum[3]  = L[3];
+            //sld::angular_momentum = {0.0, 0.0,0.0,0.0};
+            sld::angular_momentum=L;
+            // end angular momentum
 
 
       return EXIT_SUCCESS;

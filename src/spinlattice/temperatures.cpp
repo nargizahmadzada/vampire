@@ -87,4 +87,47 @@ double compute_lattice_temperature(const int start_index, // first atom for exch
 
 }//end of lattice_temperature
 
+// angular momentum - Nargiz Ahmadzada
+void compute_angular_momentum(
+    const int start_index, // first atom for exchange interactions to be calculated
+    const int end_index,
+    const std::vector<int>& type_array, // type for atom,
+    std::vector<double>& x_coord_array, // coord vectors for atoms (r)
+    std::vector<double>& y_coord_array,
+    std::vector<double>& z_coord_array,
+    std::vector<double>& velo_array_x, // velocity vectors for atoms
+    std::vector<double>& velo_array_y,
+    std::vector<double>& velo_array_z,
+    std::array<double, 4>& L){
+    
+    double Rx, Ry, Rz; // r vector components
+    double Vx, Vy, Vz; // velocity vector components
+    double Lx = 0.0;
+    double Ly = 0.0;
+    double Lz = 0.0; // angular momentum vector components
+                    
+    for (int at=start_index;at<end_index;at++){
+      const unsigned int imat = type_array[at];
+      double mass = sld::internal::mp[imat].mass.get(); // mass
+      Rx = x_coord_array[at];
+      Ry = y_coord_array[at];
+      Rz = z_coord_array[at];
+      Vx = velo_array_x[at];
+      Vy = velo_array_y[at];
+      Vz = velo_array_z[at];
+
+      Lx += mass * (Ry * Vz - Rz * Vy); // m * R x V (cross product)
+      Ly += mass * (Rz * Vx - Rx * Vz);
+      Lz += mass * (Rx * Vy - Ry * Vx);
+                        
+    }
+    L[0] = Lx;
+    L[1]= Ly;
+    L[2]= Lz;
+    L[3] = sqrt(Lx*Lx + Ly*Ly + Lz*Lz); // update to module
+	return;
+  } 
+// end of angular momentum
+
    } // end of sld namespace
+     //

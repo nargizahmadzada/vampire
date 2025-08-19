@@ -134,7 +134,7 @@ namespace sld{
 
    }
    //std::cout<<"random positions  "<<dr<<std::endl;
-   /*
+   
     for( int i = 0; i < atoms::num_atoms; i++)
     {
 
@@ -143,7 +143,7 @@ namespace sld{
              z_coord_array[i] += dr* (2.0*rand()/double(RAND_MAX) -1.0); 
 
         
-    }*/
+    }
     
 
    return;

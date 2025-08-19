@@ -32,7 +32,7 @@ namespace sld{
    double C_eff;
    bool suzuki_trotter_parallel_initialized = false;
    
-    
+   std::array<double, 4> angular_momentum; // Nargiz Ahmadzada
 
    namespace internal{
 

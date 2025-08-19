@@ -14,7 +14,7 @@
 // C++ standard library headers
 #include <string>
 #include <vector>
-
+#include <cstdint>
 // Vampire headers
 #include "dipole.hpp"
 

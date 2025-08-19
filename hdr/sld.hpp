@@ -19,7 +19,7 @@
 // Vampire headers
 #include "sld.hpp"
 #include <vector>
-
+#include <array>
 
 //--------------------------------------------------------------------------------
 // Namespace for variables and functions for sld module
@@ -162,6 +162,8 @@ namespace sld{
    extern double sld_coupling_energy;
    extern double sld_total_energy;
    extern double sld_total_spin_energy;*/  
+   extern std::array<double, 4> angular_momentum; // Nargiz Ahmadzada
+   
    
    
    extern double J_eff;
@@ -172,8 +174,31 @@ namespace sld{
    extern bool suzuki_trotter_parallel_initialized;
    void suzuki_trotter_step_parallel(std::vector<double> &x_spin_array, std::vector<double> &y_spin_array, std::vector<double> &z_spin_array, std::vector<int> &type_array);
 
-
-
+// angular momentum
+   void compute_angular_momentum( const int start_index, // first atom for exchange interactions to be calculated
+               const int end_index,
+               const std::vector<int> &type_array, // type for atom
+               std::vector<double> &x_coord_array, // coord vectors for atoms
+               std::vector<double> &y_coord_array,
+               std::vector<double> &z_coord_array,
+               std::vector<double> &velo_array_x,// vectors for fields
+               std::vector<double> &velo_array_y,
+               std::vector<double> &velo_array_z,
+               std::array<double, 4> &L);
+   
+// rate of angular momentum
+/*
+void compute_rate_angular_momentum(const int start_index, // first atom for exchange interactions to be calculated
+               const int end_index,
+               std::vector<int>& type_array, // type for atom,
+               std::vector<double>& x_coord_array, // coord vectors for atoms (r)
+               std::vector<double>& y_coord_array,
+               std::vector<double>& z_coord_array,
+	            std::vector<double>& forces_array_x, // vectors for forces
+               std::vector<double>& forces_array_y,
+               std::vector<double>& forces_array_z,
+               std::array<double, 4>& rate_L);
+*/
 } // end of sld namespace
 
 #endif //SLD_H_

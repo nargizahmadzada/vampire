@@ -141,6 +141,7 @@ namespace vout{
    void syslatticetemp(std::ostream& stream,bool header);
    void mean_syslatticetemp(std::ostream& stream,bool header);
    void material_mean_syslatticetemp(std::ostream& stream,bool header);
+   void output_sld_angular_momentum(std::ostream& stream, bool header); // Nargiz Ahmadzada
    
    
    void mean_system_susceptibility(std::ostream& stream,bool header);
