@@ -100,6 +100,8 @@ void compute_angular_momentum(
     std::vector<double>& velo_array_z,
     std::array<double, 4>& L){
     
+    const double h_bar = 6.582119569e-4; // eV*ps
+
     double Rx, Ry, Rz; // r vector components
     double Vx, Vy, Vz; // velocity vector components
     double Lx = 0.0;
@@ -121,10 +123,14 @@ void compute_angular_momentum(
       Lz += mass * (Rx * Vy - Ry * Vx);
                         
     }
-    L[0] = Lx;
-    L[1]= Ly;
-    L[2]= Lz;
-    L[3] = sqrt(Lx*Lx + Ly*Ly + Lz*Lz); // update to module
+
+    int N = (end_index - start_index + 1); // number of atoms
+    double norm = N * h_bar;  // for normalisation of angular momentum
+
+    L[0] = Lx / norm; // normalised angular momentum
+    L[1]= Ly / norm ;
+    L[2]= Lz / norm;
+    L[3] = sqrt(Lx*Lx + Ly*Ly + Lz*Lz) / norm; // update to module
 	return;
   } 
 // end of angular momentum

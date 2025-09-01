@@ -4,9 +4,9 @@
 #
 #------------------------------------------
 create:crystal-structure=bcc
-create:periodic-boundaries-x
-create:periodic-boundaries-y
-create:periodic-boundaries-z
+#create:periodic-boundaries-x #remove 2test
+#create:periodic-boundaries-y
+#create:periodic-boundaries-z
 
 
 #------------------------------------------
@@ -65,8 +65,9 @@ output:sld-coupling-energy
 
 
 output:sld-total-energy
-output:sld-angular-momentum # Nargiz Ahmadzada
-
+#
+output:sld-angular-momentum
+#
 output:output-rate=1
 output:precision=16
 

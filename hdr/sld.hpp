@@ -186,19 +186,7 @@ namespace sld{
                std::vector<double> &velo_array_z,
                std::array<double, 4> &L);
    
-// rate of angular momentum
-/*
-void compute_rate_angular_momentum(const int start_index, // first atom for exchange interactions to be calculated
-               const int end_index,
-               std::vector<int>& type_array, // type for atom,
-               std::vector<double>& x_coord_array, // coord vectors for atoms (r)
-               std::vector<double>& y_coord_array,
-               std::vector<double>& z_coord_array,
-	            std::vector<double>& forces_array_x, // vectors for forces
-               std::vector<double>& forces_array_y,
-               std::vector<double>& forces_array_z,
-               std::array<double, 4>& rate_L);
-*/
+
 } // end of sld namespace
 
 #endif //SLD_H_

@@ -20,6 +20,8 @@
 #include <functional>
 #include <string>
 
+#include <cstdint>
+
 namespace vdc{
 
    // input filename
