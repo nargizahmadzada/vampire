@@ -4,9 +4,9 @@
 #
 #------------------------------------------
 create:crystal-structure=bcc
-#create:periodic-boundaries-x #remove 2test
-#create:periodic-boundaries-y
-#create:periodic-boundaries-z
+create:periodic-boundaries-x
+create:periodic-boundaries-y
+create:periodic-boundaries-z
 
 
 #------------------------------------------
